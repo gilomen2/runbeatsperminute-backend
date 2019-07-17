@@ -5,7 +5,7 @@ const cors = require('cors')
 
 let app = express()
 
-const whitelist = ['http://runbeatsperminute.com', 'http://localhost:3000']
+const whitelist = ['https://runbeatsperminute.com', 'http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -16,11 +16,9 @@ const corsOptions = {
   }
 }
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.use(cors(corsOptions))
 
-app.options('*', cors(corsOptions))
-
-app.get('/test-cors', cors(corsOptions), (req, res) => {
+app.get('/test-cors', (req, res) => {
   res.json({
     text: 'This was a test'
   })
@@ -31,3 +29,5 @@ app.get('/test-no-cors', (req, res) => {
     text: 'This was a test'
   })
 })
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
