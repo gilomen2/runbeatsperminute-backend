@@ -20,7 +20,13 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 app.options('*', cors(corsOptions))
 
-app.get('/test-route', cors(corsOptions), (req, res) => {
+app.get('/test-cors', cors(corsOptions), (req, res) => {
+  res.json({
+    text: 'This was a test'
+  })
+})
+
+app.get('/test-no-cors', (req, res) => {
   res.json({
     text: 'This was a test'
   })
