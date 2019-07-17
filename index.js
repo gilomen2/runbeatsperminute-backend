@@ -5,7 +5,7 @@ const cors = require('cors')
 
 let app = express()
 
-const whitelist = ['http://runbeatsperminute.com', 'localhost:3000']
+const whitelist = ['http://runbeatsperminute.com', 'http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
