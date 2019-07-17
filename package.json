@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "name": "runbeatesperminute-backend",
+  "version": "0.0.1",
+  "description": "backend for app to generate Spotify playlists based on bpm",
   "engines": {
     "node": "10.x"
   },
@@ -11,6 +11,7 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "ejs": "^2.5.6",
     "express": "^4.15.2"
   },
@@ -20,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/gilomen2/runbeatsperminute-backend"
   },
   "keywords": [
     "node",
